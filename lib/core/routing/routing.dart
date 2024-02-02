@@ -1,4 +1,5 @@
 import 'package:bazar_app/core/feature/on_boarding/ui/screens/splash_screen.dart';
+import 'package:bazar_app/core/feature/on_boarding/ui/screens/start_control_page.dart';
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,8 @@ class AppRouter {
 
       case Routers.homeScreen:
         return MaterialPageRoute(builder: (context) => HomePage());
+      case Routers.startControlScreen:
+        return MaterialPageRoute(builder: (context) => StartControlPage());
       default:
         return MaterialPageRoute(builder: (context) => HomePage());
     }
