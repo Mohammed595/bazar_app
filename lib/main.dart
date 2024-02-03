@@ -1,10 +1,13 @@
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:bazar_app/core/routing/routing.dart';
+import 'package:bazar_app/core/servers/prefs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SharedPrefnsSirves.create();
   runApp(const ProviderScope(child: MyApp()));
 }
 

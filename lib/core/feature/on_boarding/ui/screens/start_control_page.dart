@@ -3,6 +3,7 @@ import 'package:bazar_app/core/feature/on_boarding/ui/screens/start_pages/first_
 import 'package:bazar_app/core/feature/on_boarding/ui/screens/start_pages/second_page.dart';
 import 'package:bazar_app/core/feature/on_boarding/ui/screens/start_pages/third_page.dart';
 import 'package:bazar_app/core/feature/on_boarding/ui/widgets/getstarted_button.dart';
+import 'package:bazar_app/core/provoders/prefs_provider.dart';
 import 'package:bazar_app/core/theming/colors.dart';
 import 'package:bazar_app/core/theming/styles.dart/text_style.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class StartControlPage extends ConsumerWidget {
                   onPageChanged: (value) {
                     pageController.jumpToPage(value);
                     ref.read(indexSmoothProvider.notifier).changeIndex(value);
-                    print(value);
+                    // print(value);
                   },
                   children: const [
                     FirstPage(),
@@ -80,11 +81,13 @@ class StartControlPage extends ConsumerWidget {
                     title: indexSoomth == 2 ? 'get Started' : 'Continue',
                     func: () {
                       if (indexSoomth == 1 || indexSoomth == 0) {
-                        ref
-                            .read(indexSmoothProvider.notifier)
-                            .changeIndex(indexSoomth + 1);
                         pageController.jumpToPage(indexSoomth + 1);
-                      } else {}
+                        print('>> ${ref.read(indexSmoothProvider)}');
+                      } else {
+                        ref.read(prefsProvider).setASPassed();
+
+                        print('Dont Change state');
+                      }
                     },
                     containarColor: AppColors.mainPurpleColor,
                   ),
@@ -94,7 +97,9 @@ class StartControlPage extends ConsumerWidget {
                   GetStatedButtonWidget(
                     title: 'Sign in',
                     func: () {
-                      print('Sign in');
+                      // ref.read(prefsProvider).setASPassed();
+                      // SharedPrefnsSirves.setASPassed;
+                      print('Dont Change state');
                     },
                     containarColor: const Color(0xffFAF9FD),
                   ),

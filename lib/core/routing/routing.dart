@@ -1,6 +1,7 @@
 import 'package:bazar_app/core/feature/on_boarding/ui/screens/splash_screen.dart';
 import 'package:bazar_app/core/feature/on_boarding/ui/screens/start_control_page.dart';
 import 'package:bazar_app/core/routing/routers.dart';
+import 'package:bazar_app/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -10,24 +11,11 @@ class AppRouter {
         return MaterialPageRoute(builder: (context) => SplashScreen());
 
       case Routers.homeScreen:
-        return MaterialPageRoute(builder: (context) => HomePage());
+        return MaterialPageRoute(builder: (context) => HomeScreen());
       case Routers.startControlScreen:
         return MaterialPageRoute(builder: (context) => StartControlPage());
       default:
-        return MaterialPageRoute(builder: (context) => HomePage());
+        return MaterialPageRoute(builder: (context) => HomeScreen());
     }
-  }
-}
-
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('Hello world'),
-      ),
-    );
   }
 }
