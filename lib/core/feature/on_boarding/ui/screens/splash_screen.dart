@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:bazar_app/core/feature/on_boarding/ui/widgets/logo_name.dart';
-import 'package:bazar_app/core/provoders/prefs_provider.dart';
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:bazar_app/core/theming/assets_path.dart';
 import 'package:bazar_app/core/theming/colors.dart';
@@ -20,14 +19,14 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    final x = ref.read(prefsProvider);
-
+    // final x = ref.read(prefsProvider);
     Timer(const Duration(seconds: 3), () {
-      if (x.isPassed()) {
-        Navigator.pushNamed(context, Routers.homeScreen);
-      } else {
-        Navigator.pushNamed(context, Routers.startControlScreen);
-      }
+      // if (x.isPassed()) {
+      // Navigator.pushNamed(context, Routers.homeScreen);
+      // } else {
+      //   Navigator.pushNamed(context, Routers.startControlScreen);
+      // }
+      Navigator.pushNamed(context, Routers.signUpScreen);
     });
   }
 

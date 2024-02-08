@@ -16,15 +16,15 @@ class SharedPrefnsSirves {
   }
 
   void setASNotPassed() {
-    sharedPreferences.setString('aaaasPassed', 'no');
+    sharedPreferences.setString('aaaaaaasPassed', 'no');
   }
 
   void setASPassed() {
-    sharedPreferences.setString('aaaasPassed', 'yes');
+    sharedPreferences.setString('aaaaaaasPassed', 'yes');
   }
 
   bool isPassed() {
-    final y = sharedPreferences.get('aaaasPassed');
+    final y = sharedPreferences.get('aaaaaaasPassed');
     String x = y.toString();
     print('>>>> $x');
     if (x == 'no' || y == null) {

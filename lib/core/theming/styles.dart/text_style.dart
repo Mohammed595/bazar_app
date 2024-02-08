@@ -24,6 +24,23 @@ class AppTextStyle {
     fontWeight: FontWeight.w300,
     decoration: TextDecoration.none,
   );
+  static TextStyle size16Width500Gray = GoogleFonts.roboto(
+    color: Color(0xffA6A6A6),
+    fontSize: 16.sp,
+    decoration: TextDecoration.none,
+  );
+  static TextStyle size16WidthBoldBlack = GoogleFonts.roboto(
+    color: Colors.black,
+    fontSize: 16.sp,
+    fontWeight: FontWeight.bold,
+    decoration: TextDecoration.none,
+  );
+  static TextStyle size15Width500Gray = GoogleFonts.roboto(
+    color: Colors.grey,
+    fontSize: 15.sp,
+    // fontWeight: FontWeight.bold,
+    decoration: TextDecoration.none,
+  );
   static TextStyle size14BoldPurple = GoogleFonts.roboto(
     color: AppColors.mainPurpleColor,
     fontSize: 16.sp,
