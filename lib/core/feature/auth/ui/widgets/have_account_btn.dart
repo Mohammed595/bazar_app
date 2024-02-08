@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 
 class HaveAccountButton extends StatelessWidget {
   const HaveAccountButton(
-      {super.key, required this.titleBtn, required this.disc});
+      {super.key,
+      required this.titleBtn,
+      required this.disc,
+      required this.func});
 
   final String titleBtn;
   final String disc;
+  final VoidCallback func;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class HaveAccountButton extends StatelessWidget {
           style: AppTextStyle.size16Width500Gray,
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: func,
           child: Text(
             titleBtn,
             style: AppTextStyle.size16BoldPurple,

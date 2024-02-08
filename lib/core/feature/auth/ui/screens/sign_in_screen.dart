@@ -1,14 +1,13 @@
 import 'package:bazar_app/core/feature/auth/ui/widgets/have_account_btn.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/register_button.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/sign_title_disc.dart';
-import 'package:bazar_app/core/feature/auth/ui/widgets/terms_button.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/title_text_feild_widget.dart';
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +25,17 @@ class SignUpScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SignTitleAndDiscWidget(
-                title: 'Sign Up',
-                disc: 'Create account and choose favorite menu',
+                title: 'Welcome Back 👋',
+                disc: 'Sign to your account',
               ),
               SizedBox(
                 height: 24.h,
               ),
 
               // text feild
-              const TitleAndTextFeildWidget(
-                title: 'Name',
-              ),
 
               SizedBox(
-                height: 16.h,
+                height: 5.h,
               ),
               const TitleAndTextFeildWidget(
                 title: 'Email',
@@ -56,10 +52,8 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               RegisterButtonWidget(
-                title: 'Register',
-                func: () {
-                  Navigator.pushNamed(context, Routers.congratulationScreen);
-                },
+                title: 'Sign in',
+                func: () {},
               ),
 
               SizedBox(
@@ -67,20 +61,11 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               HaveAccountButton(
-                titleBtn: 'Sign In',
-                disc: 'Have an account?',
+                titleBtn: 'Sign Up',
+                disc: 'Don\'t have an account?',
                 func: () {
-                  Navigator.pushNamed(context, Routers.signInScreen);
+                  Navigator.pushNamed(context, Routers.signUpScreen);
                 },
-              ),
-
-              // const Spacer(),
-              SizedBox(
-                height: 45.h,
-              ),
-
-              const Center(
-                child: TermsButton(),
               ),
             ],
           ),

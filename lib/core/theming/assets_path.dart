@@ -11,4 +11,6 @@ class AppImages {
       'assets/images/secondPageBackground.png';
   static const String thirdPageBackground =
       'assets/images/thirdPageBackground.png';
+  static const String congratulationImage =
+      'assets/images/CongratulationImage.png';
 }
