@@ -1,18 +1,28 @@
+import 'package:bazar_app/core/routing/routers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
       body: Center(
-        child: Text('Home Page'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('authProv?.email ?? null}'),
+            IconButton(
+              onPressed: () {
+                // ref.read(authProvider).signOut();
+                // print('Done sign out');
+                Navigator.pushNamed(context, Routers.splashScreen);
+              },
+              icon: const Icon(Icons.login),
+            )
+          ],
+        ),
       ),
     );
   }

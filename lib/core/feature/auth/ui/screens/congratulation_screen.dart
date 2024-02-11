@@ -3,13 +3,14 @@ import 'package:bazar_app/core/routing/routers.dart';
 import 'package:bazar_app/core/theming/assets_path.dart';
 import 'package:bazar_app/core/theming/styles.dart/text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CongratulationScreen extends StatelessWidget {
+class CongratulationScreen extends ConsumerWidget {
   const CongratulationScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
     return Scaffold(
       body: Center(
         child: Column(

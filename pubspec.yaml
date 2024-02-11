@@ -24,6 +24,8 @@ dependencies:
   google_fonts: ^6.1.0
   flutter_riverpod: ^2.4.9
   shared_preferences: ^2.2.2
+  firebase_core: ^2.25.4
+  firebase_auth: ^4.17.4
 
 dev_dependencies:
   flutter_test:

@@ -19,15 +19,13 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    // final x = ref.read(prefsProvider);
-    Timer(const Duration(seconds: 3), () {
-      // if (x.isPassed()) {
-      // Navigator.pushNamed(context, Routers.homeScreen);
-      // } else {
-      //   Navigator.pushNamed(context, Routers.startControlScreen);
-      // }
-      Navigator.pushNamed(context, Routers.signUpScreen);
-    });
+
+    Future.delayed(
+      Duration(seconds: 3),
+      () {
+        Navigator.pushNamed(context, Routers.signUpScreen);
+      },
+    );
   }
 
   @override

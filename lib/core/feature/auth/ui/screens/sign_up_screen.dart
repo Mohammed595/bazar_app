@@ -5,13 +5,18 @@ import 'package:bazar_app/core/feature/auth/ui/widgets/terms_button.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/title_text_feild_widget.dart';
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends ConsumerWidget {
   const SignUpScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    // final authProv = ref.watch(authProvider);
+    TextEditingController editingConName = TextEditingController();
+    TextEditingController editingConEmail = TextEditingController();
+    TextEditingController editingConPassword = TextEditingController();
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -34,21 +39,24 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               // text feild
-              const TitleAndTextFeildWidget(
+              TitleAndTextFeildWidget(
                 title: 'Name',
+                textControl: editingConName,
               ),
 
               SizedBox(
                 height: 16.h,
               ),
-              const TitleAndTextFeildWidget(
+              TitleAndTextFeildWidget(
                 title: 'Email',
+                textControl: editingConEmail,
               ),
               SizedBox(
                 height: 16.h,
               ),
-              const TitleAndTextFeildWidget(
+              TitleAndTextFeildWidget(
                 title: 'Password',
+                textControl: editingConPassword,
               ),
 
               SizedBox(
@@ -58,7 +66,7 @@ class SignUpScreen extends StatelessWidget {
               RegisterButtonWidget(
                 title: 'Register',
                 func: () {
-                  Navigator.pushNamed(context, Routers.congratulationScreen);
+                  // here get All Contrllers
                 },
               ),
 

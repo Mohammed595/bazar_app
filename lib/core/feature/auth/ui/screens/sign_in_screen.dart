@@ -4,13 +4,18 @@ import 'package:bazar_app/core/feature/auth/ui/widgets/sign_title_disc.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/title_text_feild_widget.dart';
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends ConsumerWidget {
   const SignInScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    TextEditingController editingConEmail = TextEditingController();
+    TextEditingController editingConPassword = TextEditingController();
+
+    // final authProv = ref.watch(authProvider);
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -31,35 +36,30 @@ class SignInScreen extends StatelessWidget {
               SizedBox(
                 height: 24.h,
               ),
-
-              // text feild
-
               SizedBox(
                 height: 5.h,
               ),
-              const TitleAndTextFeildWidget(
+              TitleAndTextFeildWidget(
                 title: 'Email',
+                textControl: editingConEmail,
               ),
               SizedBox(
                 height: 16.h,
               ),
-              const TitleAndTextFeildWidget(
+              TitleAndTextFeildWidget(
                 title: 'Password',
+                textControl: editingConPassword,
               ),
-
               SizedBox(
                 height: 10.h,
               ),
-
               RegisterButtonWidget(
                 title: 'Sign in',
                 func: () {},
               ),
-
               SizedBox(
                 height: 12.h,
               ),
-
               HaveAccountButton(
                 titleBtn: 'Sign Up',
                 disc: 'Don\'t have an account?',

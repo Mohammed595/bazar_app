@@ -2,7 +2,7 @@ import 'package:bazar_app/core/feature/auth/ui/screens/congratulation_screen.dar
 import 'package:bazar_app/core/feature/auth/ui/screens/sign_in_screen.dart';
 import 'package:bazar_app/core/feature/auth/ui/screens/sign_up_screen.dart';
 import 'package:bazar_app/core/feature/home_page/ui/screens/home_page.dart';
-import 'package:bazar_app/core/feature/on_boarding/ui/screens/splash_screen.dart';
+import 'package:bazar_app/splash_screen.dart';
 import 'package:bazar_app/core/feature/on_boarding/ui/screens/start_control_page.dart';
 import 'package:bazar_app/core/routing/routers.dart';
 import 'package:flutter/material.dart';

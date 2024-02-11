@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TitleAndTextFeildWidget extends StatelessWidget {
-  const TitleAndTextFeildWidget({super.key, required this.title});
+  const TitleAndTextFeildWidget(
+      {super.key, required this.title, required this.textControl});
 
   final String title;
+  final TextEditingController textControl;
   // controller
 
   @override
@@ -31,9 +33,10 @@ class TitleAndTextFeildWidget extends StatelessWidget {
             padding: EdgeInsets.symmetric(
               horizontal: 20.w,
             ),
-            child: const TextField(
+            child: TextField(
+              controller: textControl,
               textAlign: TextAlign.start,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: 'Your name',
                   hintStyle: TextStyle(
                     color: Color(0xffB8B8B8),
