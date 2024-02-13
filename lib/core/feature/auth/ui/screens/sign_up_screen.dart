@@ -4,6 +4,8 @@ import 'package:bazar_app/core/feature/auth/ui/widgets/sign_title_disc.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/terms_button.dart';
 import 'package:bazar_app/core/feature/auth/ui/widgets/title_text_feild_widget.dart';
 import 'package:bazar_app/core/routing/routers.dart';
+import 'package:bazar_app/core/service/remote_data/auth_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,7 +15,7 @@ class SignUpScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, ref) {
-    // final authProv = ref.watch(authProvider);
+    // final authProv = ref.watch(authServProvider);
     TextEditingController editingConName = TextEditingController();
     TextEditingController editingConEmail = TextEditingController();
     TextEditingController editingConPassword = TextEditingController();
@@ -65,8 +67,17 @@ class SignUpScreen extends ConsumerWidget {
 
               RegisterButtonWidget(
                 title: 'Register',
-                func: () {
+                func: () async {
                   // here get All Contrllers
+
+                  User? user = await ref
+                      .read(authServProvider)
+                      .signUp(editingConEmail.text, editingConPassword.text);
+
+                  if (user == null) {
+                  } else {
+                    Navigator.pushNamed(context, Routers.homeScreen);
+                  }
                 },
               ),
 
